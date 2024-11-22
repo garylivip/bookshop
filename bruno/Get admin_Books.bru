@@ -1,0 +1,23 @@
+meta {
+  name: Get admin_Books
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:4004/odata/v4/admin/Books?$search=W&$expand=author($select=name, placeOfBirth)&$select=ID, title, stock&$expand=genre($select=name)
+  body: none
+  auth: basic
+}
+
+params:query {
+  $search: W
+  $expand: author($select=name, placeOfBirth)
+  $select: ID, title, stock
+  $expand: genre($select=name)
+}
+
+auth:basic {
+  username: alice
+  password: 
+}

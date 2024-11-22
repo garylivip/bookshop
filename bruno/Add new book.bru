@@ -1,0 +1,20 @@
+meta {
+  name: Add new book
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:4004/browse/submitOrder
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: alice
+  password: 
+}
+
+body:json {
+  {"book": 201, "quantity": 2}
+}
