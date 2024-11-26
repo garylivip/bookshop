@@ -9,3 +9,4 @@ service AdminService {
   action add (x:Integer, to: Integer) returns Integer;
 }
 //@(requires: 'authenticated-user') 
+annotate AdminService with @(requires: 'support');

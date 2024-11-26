@@ -16,14 +16,26 @@
   "scripts": {
     "start": "cds-serve",
     "watch-managebook": "cds watch --open managebook/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-catalog": "cds watch --open catalog/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-cataloglistreport": "cds watch --open cataloglistreport/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-bookcatalog": "cds watch --open bookcatalog/webapp/index.html?sap-ui-xx-viewCache=false"
   },
+  "cds": {
+    "requires": {
+      "[development]":{
+        "auth":{
+          "kind": "mocked",
+          "users": {
+            "alice": {
+              "roles": ["support", "admin"]
+            }
+          }
+        }
+      }
+    }
+  },
   "sapux": [
     "app/managebook",
-    "app/catalog",
     "app/cataloglistreport",
     "app/project1"
   ]
