@@ -1,5 +1,8 @@
 using {bookshop.v2024 as bookshop} from '../db/schema';
-service CatalogService @(path: '/browse') {
+
+@path: '/browse'
+@impl: './handlers/cat-service.js'
+service CatalogService  {
 
     @readonly entity DenormalizedViewsBooks as select from bookshop.Books{
         *, author.name as author,

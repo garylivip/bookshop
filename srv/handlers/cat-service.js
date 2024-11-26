@@ -1,4 +1,5 @@
 const cds = require('@sap/cds');
+
 module.exports = cds.service.impl(async function() {
     const db = await cds.connect.to('db'); // connect to database service
     const { Books } = db.entities; // get reflected definitions

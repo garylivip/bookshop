@@ -27,7 +27,7 @@
           "kind": "mocked",
           "users": {
             "alice": {
-              "roles": ["support", "admin"]
+              "roles": ["support", "admin", "manager"]
             }
           }
         }
