@@ -2,17 +2,20 @@ using {bookshop.v2024 as bookshop} from '../db/schema';
 
 @path: '/browse'
 @impl: './handlers/cat-service.js'
+
 service CatalogService  {
 
-    @readonly entity DenormalizedViewsBooks as select from bookshop.Books{
-        *, author.name as author,
-    } excluding { createdBy, modifiedBy};
+    /** For displaying lists of Books */
+    @readonly entity ListOfBooks as projection on Books
+    excluding { descr };
+        
+    /** For display in details pages */
+    @readonly entity Books as projection on bookshop.Books { *,
+        author.name as author
+    } excluding { createdBy, modifiedBy };
 
-    @readonly entity Books as select from bookshop.Books{
-        *, author.name as author,
-    } excluding { createdBy, modifiedBy};
-
-    action submitOrder (book: DenormalizedViewsBooks:ID, quantity: Integer) returns String;
-    
+    @requires: 'authenticated-user'
+    action submitOrder (book: Books:ID, quantity: Integer) returns { stock: Integer };
+    event OrderBook: { book: Books:ID; quantity: Integer; buyer: String };   
 
 }

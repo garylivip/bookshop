@@ -2,7 +2,7 @@ const cds = require('@sap/cds');
 
 module.exports = class AdminService extends cds.ApplicationService{
     async init() {
-        this.db = await cds.connect.to('db'); // 明天验证一下，这一句在这里有没有用
+        // this.db = await cds.connect.to('db'); // 这一句在本moudle中没有用到
         this.before(['NEW', 'CREATE'], 'Authors', genid); // Multiple events can be passed as an array if they share the same handler
         this.before(['NEW', 'CREATE'], 'Books', genid);
 
