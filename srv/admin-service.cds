@@ -10,8 +10,8 @@ service AdminService {
   entity Authors as projection on bookshop.Authors;
 
   // The following code consists of some additional experimental exercises, which are consumed by Bruno.
-  action add (x:Integer, y: Integer) returns Integer;  
-  function subtract (x: Integer, y: Integer) returns Integer;
+  action add_testingaction (x:Integer, y: Integer) returns Integer;  
+  function subtract_testingfunction (x: Integer, y: Integer) returns Integer;
 }
 
 /* 

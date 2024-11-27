@@ -1,0 +1,27 @@
+meta {
+  name: CreateNewBooks
+  type: http
+  seq: 7
+}
+
+put {
+  url: http://localhost:4004/admin/Books/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: alice
+  password: 
+}
+
+body:json {
+  {
+  "title": "Title: Bruno new book 1 w/ ID 110 assigned",
+  "descr": "Descr: Bruno new book 1 w/o ID 110 assigned",
+  "author_ID": "107",
+  "stock": 205,
+  "price": 15.61,
+   "currency_code": "GBP",
+   "genre_ID": "11"}
+}

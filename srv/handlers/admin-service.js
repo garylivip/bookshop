@@ -6,21 +6,10 @@ module.exports = class AdminService extends cds.ApplicationService{
         this.before(['NEW', 'CREATE'], 'Authors', genid); // Multiple events can be passed as an array if they share the same handler
         this.before(['NEW', 'CREATE'], 'Books', genid);
 
-        this.on('add', this.add);
-        this.on('subtract', this.subtract);
-        this.on('READ', 'Books', this.readBooks());
+        this.on('add', add_testingaction);
+        this.on('subtract', subtract_testingfunction);
         
         return super.init();
-    }
-
-    add(req) {
-        const { x, y } = req.data;
-        return x + y;
-    }
-
-    subtract(req) {
-        const { x, y } = req.data;
-        return x - y;
     }
 }
 
@@ -36,3 +25,19 @@ async function genid (req) {
   const { id } = await SELECT.one.from(req.target).columns("max(ID) as id");
   req.data.ID = id ? id + 1 : 1;
 }
+
+function add_testingaction(req) {
+    const { x, y } = req.data;
+    return x + y;
+}
+
+function subtract_testingfunction(req) {
+    const { x, y } = req.data;
+    return x - y;
+}
+
+/*
+PUT + http://localhost:4004/admin/Books/110 + Body JSON  可以成功创建记录
+POST + http://localhost:4004/admin/Books + Body JSON 也可以成功创建记录 (注意：Books后面不要加/，否则会报错)
+*/
+
