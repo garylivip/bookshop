@@ -1,0 +1,16 @@
+meta {
+  name: userlogin
+  type: http
+  seq: 10
+}
+
+get {
+  url: http://localhost:4004/user/me
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: alice
+  password: 
+}
