@@ -28,3 +28,10 @@ entity Genres : sap.common.CodeList {
   parent   : Association to Genres;
   children : Composition of many Genres on children.parent = $self;
 }
+
+entity GenreHierarchy : Genres {
+  hierarchyLevel : Integer default 0;
+  drillState     : String default 'leaf';
+  parent         : Association to GenreHierarchy;
+  children       : Composition of many GenreHierarchy on children.parent = $self;
+}

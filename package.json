@@ -18,16 +18,22 @@
     "watch-managebook": "cds watch --open managebook/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-cataloglistreport": "cds watch --open cataloglistreport/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-bookcatalog": "cds watch --open bookcatalog/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-bookcatalog": "cds watch --open bookcatalog/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-cat-genres": "cds watch --open cat-genres/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-catalog-genres": "cds watch --open catalog-genres/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
-      "[development]":{
-        "auth":{
+      "[development]": {
+        "auth": {
           "kind": "mocked",
           "users": {
             "alice": {
-              "roles": ["support", "admin", "manager"]
+              "roles": [
+                "support",
+                "admin",
+                "manager"
+              ]
             }
           }
         }
@@ -37,6 +43,7 @@
   "sapux": [
     "app/managebook",
     "app/cataloglistreport",
-    "app/project1"
+    "app/project1",
+    "app/catalog-genres"
   ]
 }
