@@ -7,6 +7,9 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^8",
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sapui5/ts-types": "^1.92.2",
+    "eslint": "^7.32.0",
     "express": "^4"
   },
   "devDependencies": {
@@ -15,12 +18,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-managebook": "cds watch --open managebook/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-cataloglistreport": "cds watch --open cataloglistreport/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-bookcatalog": "cds watch --open bookcatalog/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-cat-genres": "cds watch --open cat-genres/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-catalog-genres": "cds watch --open catalog-genres/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-basic_admin_authors": "cds watch --open basic_admin_authors/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -41,9 +39,5 @@
     }
   },
   "sapux": [
-    "app/managebook",
-    "app/cataloglistreport",
-    "app/project1",
-    "app/catalog-genres"
   ]
 }
