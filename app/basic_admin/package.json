@@ -1,7 +1,7 @@
 {
-  "name": "basic_admin_authors",
+  "name": "basic_admin",
   "version": "0.0.1",
-  "description": "Desc: Basic template for admin-authors",
+  "description": "Application for Admin",
   "keywords": [
     "ui5",
     "openui5",
@@ -11,10 +11,7 @@
   "dependencies": {},
   "devDependencies": {
     "@ui5/cli": "^3.0.0",
-    "@sap/ux-ui5-tooling": "1",
-    "eslint": "8.57.0",
-    "@sap/eslint-plugin-ui5-jsdocs": "2.0.5",
-    "@sapui5/ts-types": "~1.130.0"
+    "@sap/ux-ui5-tooling": "1"
   },
   "scripts": {
     "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"

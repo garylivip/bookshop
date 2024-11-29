@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-basic_admin_authors": "cds watch --open basic_admin_authors/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-basic_admin": "cds watch --open basic_admin/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -38,6 +38,5 @@
       }
     }
   },
-  "sapux": [
-  ]
+  "sapux": []
 }

@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="ns.basicadmin.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <List
+            id="authorList"
+            headerText="{i18n>authorsHeader}"
+            items="{
+                path: '/Authors', 
+                templateShareable:false, 
+                sorter:{path:'placeOfBirth', descending:true, group:true},
+                filters:[{path:'name', operator:'Contains', value1:'e'}]
+            }"
+        >
+            <items>
+                <StandardListItem
+                    id="standardListItem"
+                    title="{name}"
+                    description="{placeOfBirth}"
+                />
+            </items>
+        </List>
+        <List
+            id="bookList"
+            headerText="{i18n>booksHeader}"
+            items="{
+                path: '/Books', 
+                templateShareable:false
+            }"
+        >
+            <items>
+                <ObjectListItem
+                    id="oli_books"
+                    title="{title}"
+                    number="{price}"
+                    numberUnit="{currency_code}"
+                >
+                    <attributes>
+                        <ObjectAttribute
+                            id="stockQuantity"
+                            text="{= 'Quantity ' + ${stock}}"
+                        />
+                        <ObjectAttribute
+                            id="priceAndStock"
+                            title="{i18n>stockValue}"
+                            text="{parts: [{path: 'price'}, {path: 'stock'}, {path: 'currency_code'}], 
+                                    formatter: '.formatStockValue'}"
+                        />
+                    </attributes>
+                </ObjectListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>

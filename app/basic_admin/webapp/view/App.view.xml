@@ -1,4 +1,4 @@
-<mvc:View controllerName="ns.bookshop.basicadminauthors.controller.App"
+<mvc:View controllerName="ns.basicadmin.controller.App"
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">

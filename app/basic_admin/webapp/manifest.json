@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "ns.bookshop.basicadminauthors",
+    "id": "ns.basicadmin",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.15.5",
-      "toolsId": "62501f6d-7d8e-45f7-ad5c-92c846364fc3"
+      "toolsId": "a96a79e9-05b0-43eb-9aec-8a60798a2576"
     },
     "dataSources": {
       "mainService": {
@@ -27,9 +27,9 @@
     },
     "crossNavigation": {
       "inbounds": {
-        "SemanticObject_ManageAuthors-Action_What": {
-          "semanticObject": "SemanticObject_ManageAuthors",
-          "action": "Action_What",
+        "AdminApp-WhatAction": {
+          "semanticObject": "AdminApp",
+          "action": "WhatAction",
           "title": "{{flpTitle}}",
           "subTitle": "{{flpSubtitle}}",
           "signature": {
@@ -73,7 +73,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "ns.bookshop.basicadminauthors.i18n.i18n"
+          "bundleName": "ns.basicadmin.i18n.i18n"
         }
       },
       "": {
@@ -101,26 +101,26 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "ns.bookshop.basicadminauthors.view"
+        "path": "ns.basicadmin.view"
       },
       "routes": [
         {
-          "name": "RouteView_Basic_Admin_Authors",
+          "name": "RouteHome",
           "pattern": ":?query:",
           "target": [
-            "TargetView_Basic_Admin_Authors"
+            "TargetHome"
           ]
         }
       ],
       "targets": {
-        "TargetView_Basic_Admin_Authors": {
-          "id": "View_Basic_Admin_Authors",
-          "name": "View_Basic_Admin_Authors"
+        "TargetHome": {
+          "id": "Home",
+          "name": "Home"
         }
       }
     },
     "rootView": {
-      "viewName": "ns.bookshop.basicadminauthors.view.App",
+      "viewName": "ns.basicadmin.view.App",
       "type": "XML",
       "id": "App"
     }

@@ -3,7 +3,7 @@ sap.ui.define([
 ], (Controller) => {
   "use strict";
 
-  return Controller.extend("ns.bookshop.basicadminauthors.controller.View_Basic_Admin_Authors", {
+  return Controller.extend("ns.basicadmin.controller.Home", {
       onInit() {
       }
   });

@@ -1,6 +1,0 @@
-<mvc:View controllerName="ns.bookshop.basicadminauthors.controller.View_Basic_Admin_Authors"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
-</mvc:View>
