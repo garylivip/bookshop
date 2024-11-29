@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<StandardListItem
+		id="bookSimpleView"
+		icon="sap-icon://warning"
+		title="{title} ({stock})"
+		info="{i18n>Discontinued}"
+		type="Active"
+		infoState="Error"
+		press=".onBookPress">
+	</StandardListItem>
+</core:FragmentDefinition>

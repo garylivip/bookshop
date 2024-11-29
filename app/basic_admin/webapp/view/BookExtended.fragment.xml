@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ObjectListItem
+		id="bookExtendedView"
+		title="{title} ({stock})"
+		number="{
+			parts: [
+				{path: 'price'},
+				{path: 'currencyCode'}
+			],
+			type: 'sap.ui.model.type.Currency',
+			formatOptions : {
+				showMeasure : false
+			}
+		}"
+		type="Active"
+		numberUnit="{currencyCode}"
+		press=".onBookPress">
+	</ObjectListItem>
+</core:FragmentDefinition>
