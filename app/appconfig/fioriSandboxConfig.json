@@ -1,0 +1,140 @@
+{
+  "services": {
+    "LaunchPage": {
+      "adapter": {
+        "config": {
+          "catalogs": [
+            {
+              "id": "basic_template_admin_catalog",
+              "title": "Basic Template Admin Catalog",
+              "tiles": [
+                {
+                  "id": "AdminApp-display",
+                  "title": "Admin Apps",
+                  "size": "1x1",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "chipId": "AdminApp-display",
+                    "title": "Admin Apps",
+                    "info": "",
+                    "icon": "sap-icon://activate",
+                    "targetURL": "#AdminApp-display"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "custom_template_admin_catalog",
+              "title": "Custom Page Template Admin Catalog",
+              "tiles": [
+                {
+                  "id": "AdminApp-display",
+                  "title": "Admin Apps",
+                  "size": "1x1",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "chipId": "AdminApp-display",
+                    "title": "Admin Apps",
+                    "info": "",
+                    "icon": "sap-icon://activate",
+                    "targetURL": "#AdminApp-display"
+                  }
+                }
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "id": "basic_template_admin_group",
+              "title": "Basic Template Admin Catalog",
+              "isPreset": true,
+              "isVisible": true,
+              "isGroupLocked": false,
+              "tiles": [
+                {
+                  "id": "AdminApp-display",
+                  "title": "Admin Apps",
+                  "size": "1x1",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "chipId": "AdminApp-display",
+                    "title": "Admin Apps",
+                    "info": "",
+                    "icon": "sap-icon://activate",
+                    "targetURL": "#AdminApp-display"
+                  }
+                }
+
+              ]
+            },   
+            {
+              "id": "custom_template_admin_group",
+              "title": "Custom Page Template Admin Catalog",
+              "isPreset": true,
+              "isVisible": true,
+              "isGroupLocked": false,
+              "tiles": [
+                {
+                  "id": "AdminApp-display",
+                  "title": "Admin Apps",
+                  "size": "1x1",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "chipId": "AdminApp-display",
+                    "title": "Admin Apps",
+                    "info": "",
+                    "icon": "sap-icon://activate",
+                    "targetURL": "#AdminApp-display"
+                  }
+                }
+
+              ]
+            }                      
+          ]
+        }
+      }
+    },
+    "NavTargetResolution": {
+      "config": {
+        "runStandaloneAppFolderWhitelist": { "*": true },
+        "allowTestUrlComponentConfig": true,
+        "enableClientSideTargetResolution": true
+      },
+      "adapter": {
+        "config": {
+          "applications": {
+            "AdminApp-display": {
+              "title": "Admin Apps",
+              "description": "Application for Admin",
+              "additionalInformation": "SAPUI5.Component=ns.basicadmin",
+              "applicationType": "URL",
+              "url": "/basic_admin/webapp",
+              "properties": { "icon": "sap-icon://document" },
+              "navigationMode": "embedded"
+            }
+          }
+        }
+      }
+    },
+    "ClientSideTargetResolution": {
+      "adapter": {
+        "config": {
+          "inbounds": {
+            "AdminApp-display": {
+              "semanticObject": "AdminApp",
+              "action": "display",
+              "signature": {
+                "parameters": {}
+              },
+              "resolutionResult": {
+                "applicationType": "URL",
+                "additionalInformation": "SAPUI5.Component=ns.basicadmin",
+                "url": "/basic_admin/webapp"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "cds-serve",
+    "watch": "cds watch",
     "watch-basic_admin": "cds watch --open basic_admin/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
@@ -37,6 +38,8 @@
         }
       }
     }
-  },
-  "sapux": []
+  },  
+  "sapux": [
+    "app/basic_admin"
+  ]
 }

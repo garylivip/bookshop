@@ -37,5 +37,11 @@ sap.ui.define([
           
            return oUIControl;
         }
+    /* 
+    从Fiori Launchpad打开应用，点击Home页面的书籍列表，会报错：
+    Uncaught (in promise) Error: Missing template or factory function for aggregation items of Element sap.m.List#application-AdminApp-display-component---Home--dynamicBookList !
+    直接访问应用，点击Home页面的书籍列表，不会报错。
+    后面要解决这个问题。
+    */
     });
 });
