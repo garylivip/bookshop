@@ -6,6 +6,6 @@ using { bookshop.v2024 as bookshop } from '../db/schema';
 
 service ProductsService {  
   // The following service definition is for Data Binding Tutorial
-  entity Products as projection on bookshop.Books;  
+  entity Products as projection on bookshop.Products;  
 }
 

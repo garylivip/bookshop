@@ -18,6 +18,7 @@ sap.ui.define([
 
             // set the device model
             this.setModel(models.createDeviceModel(), "device");
+            this.getModel("testingModel").setDefaultBindingMode("TwoWay");
 
             // enable routing
             this.getRouter().initialize();

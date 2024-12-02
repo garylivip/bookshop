@@ -2,54 +2,228 @@
     controllerName="ns.basicproducts.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m"
 >
-    <!-- <Page
+    <Page
         id="page"
-        title="{i18n>title}"
-    > -->
-    <Panel
-        id="testingPanel"
-        headerText="{testingModel>/panelHeaderText}"
-        class="sapUiResponsiveMargin"
-        width="auto"
+        showHeader="false"
     >
-        <form:SimpleForm
-            id="testingForm"
-            editable="true"
-            layout="ColumnLayout"
+        <Panel
+            id="testingPanel"
+            headerText="{i18n>panelHeaderText}"
+            class="sapUiResponsiveMargin"
+            width="auto"
         >
-            <Label
-                id="firstNameLabel"
-                text="First Name"
-            />
-            <Input
-                id="firstNameInput"
-                value="{testingModel>/firstName}"
-                valueLiveUpdate="true"
-                width="200px"
-                enabled="{testingModel>/enabled}"
-            />
-            <Label
-                id="lastNameLabel"
-                text="Last Name"
-            />
-            <Input
-                id="lastNameInput"
-                value="{testingModel>/lastName}"
-                valueLiveUpdate="true"
-                width="200px"
-                enabled="{testingModel>/enabled}"
-            />
-            <Label
-                id="enabledLabel"
-                text="Enabled"
-            />
-            <CheckBox
-                id="enabledCheckBox"
-                selected="{testingModel>/enabled}"
-            />
-        </form:SimpleForm>
-    </Panel>
-    <!-- </Page> -->
+            <form:SimpleForm
+                id="testingForm"
+                editable="true"
+                layout="ColumnLayout"
+            >
+                <Label
+                    id="firstNameLabel"
+                    text="{i18n>firstName}"
+                />
+                <Input
+                    id="firstNameInput"
+                    value="{testingModel>/firstName}"
+                    valueLiveUpdate="true"
+                    width="200px"
+                    enabled="{testingModel>/enabled}"
+                />
+                <Label
+                    id="lastNameLabel"
+                    text="{i18n>lastName}"
+                />
+                <Input
+                    id="lastNameInput"
+                    value="{testingModel>/lastName}"
+                    valueLiveUpdate="true"
+                    width="200px"
+                    enabled="{testingModel>/enabled}"
+                />
+                <Label
+                    id="enabledLabel"
+                    text="{i18n>enabled}"
+                />
+                <CheckBox
+                    id="enabledCheckBox"
+                    selected="{testingModel>/enabled}"
+                />
+            </form:SimpleForm>
+        </Panel>
+
+        <Panel
+            id="panel2"
+            headerText="{i18n>panel2HeaderText}"
+            class="sapUiResponsiveMargin"
+            width="auto"
+        >
+            <content>
+                <l:VerticalLayout id="verticalLayout1">
+                    <Label
+                        id="addressLabel"
+                        labelFor="address"
+                        text="{i18n>address}:"
+                    />
+                    <FormattedText
+                        class="sapUiSmallMarginBottom"
+                        htmlText="{testingModel>/address/street}&lt;br>{testingModel>/address/zip} {testingModel>/address/city}&lt;br>{testingModel>/address/country}"
+                        id="address"
+                        width="200px"
+                    />
+                    <Link
+                        id="link1"
+                        href="{ 
+                    parts:[
+                        'testingModel>/firstName',
+                        'testingModel>/lastName'
+                    ],
+                    formatter: '.formatMail'
+                 }"
+                        text="{i18n>sendEmail}"
+                    />
+                </l:VerticalLayout>
+                <l:VerticalLayout id="verticalLayout2">
+                    <Label
+                        id="salesAmountLabel"
+                        labelFor="salesAmount"
+                        text="{i18n>salesAmount}:"
+                    />
+                    <Input
+                        description="{testingModel>/currencyCode}"
+                        enabled="{testingModel>/enabled}"
+                        id="salesAmount"
+                        value="{
+							parts: [
+								{path: 'testingModel>/salesAmount'},
+								{path: 'testingModel>/currencyCode'}
+							],
+							type: 'sap.ui.model.type.Currency',
+							formatOptions: {showMeasure: false}
+						}"
+                        width="200px"
+                    />
+                </l:VerticalLayout>
+            </content>
+        </Panel>
+        <Panel
+            id="panel3"
+            headerText="{i18n>panel3HeaderText}"
+            class="sapUiResponsiveMargin"
+            width="auto"
+        >
+            <List
+                id="list1"
+                headerText="{i18n>productListTitle}"
+                items="{products>/Products}"
+            >
+                <items>
+                    <ObjectListItem
+                        id="oli1"
+                        press=".onItemSelected"
+                        type="Active"
+                        title="{products>ProductName}"
+                        number="{
+						parts: [
+							{path: 'products>UnitPrice'},
+							{path: 'testingModel>/currencyCode'}
+						],
+						type: 'sap.ui.model.type.Currency',
+						formatOptions: { showMeasure: false }
+					}"
+                        numberUnit="{testingModel>/currencyCode}"
+                        numberState="{= ${products>UnitPrice} > ${testingModel>/priceThreshold} ? 'Error' : 'Success'}"
+                    >
+                        <attributes>
+                            <ObjectAttribute
+                                id="oa1"
+                                text="{products>QuantityPerUnit}"
+                            />
+                            <ObjectAttribute
+                                id="oa2"
+                                title="{i18n>stockValue}"
+                                text="{
+								parts: [
+									{path: 'products>UnitPrice'},
+									{path: 'products>UnitsInStock'},
+									{path: 'testingModel>/currencyCode'}
+								],
+								formatter: '.formatStockValue'
+							}"
+                            />
+                        </attributes>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </Panel>
+        <Panel
+            id="productDetailsPanel"
+            headerText="{i18n>panel4HeaderText}"
+            class="sapUiResponsiveMargin"
+            width="auto"
+        >
+            <form:SimpleForm
+                id="_IDGenSimpleForm1"
+                editable="true"
+                layout="ColumnLayout"
+            >
+                <Label
+                    id="_IDGenLabel"
+                    text="{i18n>ProductID}"
+                />
+                <Input
+                    id="_IDGenInput"
+                    value="{products>ProductID}"
+                />
+
+                <Label
+                    id="_IDGenLabel1"
+                    text="{i18n>ProductName}"
+                />
+                <Input
+                    id="_IDGenInput1"
+                    value="{products>ProductName}"
+                />
+
+                <Label
+                    id="_IDGenLabel2"
+                    text="{i18n>QuantityPerUnit}"
+                />
+                <Input
+                    id="_IDGenInput2"
+                    value="{products>QuantityPerUnit}"
+                />
+
+                <Label
+                    id="_IDGenLabel3"
+                    text="{i18n>UnitPrice}"
+                />
+                <Input
+                    id="_IDGenInput3"
+                    value="{products>UnitPrice}"
+                />
+
+                <Label
+                    id="_IDGenLabel4"
+                    text="{i18n>UnitsInStock}"
+                />
+                <Input
+                    id="_IDGenInput4"
+                    value="{products>UnitsInStock}"
+                />
+
+                <Label
+                    id="_IDGenLabel5"
+                    text="{i18n>Discontinued}"
+                />
+                <CheckBox
+                    id="_IDGenCheckBox"
+                    selected="{products>Discontinued}"
+                />
+            </form:SimpleForm>
+        </Panel>
+      
+    </Page>
 </mvc:View>
