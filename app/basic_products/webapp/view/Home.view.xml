@@ -1,0 +1,55 @@
+<mvc:View
+    controllerName="ns.basicproducts.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+    <!-- <Page
+        id="page"
+        title="{i18n>title}"
+    > -->
+    <Panel
+        id="testingPanel"
+        headerText="{testingModel>/panelHeaderText}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <form:SimpleForm
+            id="testingForm"
+            editable="true"
+            layout="ColumnLayout"
+        >
+            <Label
+                id="firstNameLabel"
+                text="First Name"
+            />
+            <Input
+                id="firstNameInput"
+                value="{testingModel>/firstName}"
+                valueLiveUpdate="true"
+                width="200px"
+                enabled="{testingModel>/enabled}"
+            />
+            <Label
+                id="lastNameLabel"
+                text="Last Name"
+            />
+            <Input
+                id="lastNameInput"
+                value="{testingModel>/lastName}"
+                valueLiveUpdate="true"
+                width="200px"
+                enabled="{testingModel>/enabled}"
+            />
+            <Label
+                id="enabledLabel"
+                text="Enabled"
+            />
+            <CheckBox
+                id="enabledCheckBox"
+                selected="{testingModel>/enabled}"
+            />
+        </form:SimpleForm>
+    </Panel>
+    <!-- </Page> -->
+</mvc:View>

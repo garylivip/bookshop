@@ -35,3 +35,16 @@ entity GenreHierarchy : Genres {
   parent         : Association to GenreHierarchy;
   children       : Composition of many GenreHierarchy on children.parent = $self;
 }
+
+entity Products : managed {
+  key ProductID       : Integer;
+  ProductName         : String(255);
+  SupplierID          : Integer;
+  CategoryID          : Integer;
+  QuantityPerUnit     : String(255);
+  UnitPrice           : Decimal(18,4);
+  UnitsInStock        : Integer;
+  UnitsOnOrder        : Integer;
+  ReorderLevel        : Integer;
+  Discontinued        : Boolean;
+}

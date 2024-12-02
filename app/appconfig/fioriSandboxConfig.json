@@ -45,7 +45,7 @@
           ],
           "groups": [
             {
-              "id": "basic_template_admin_group",
+              "id": "basic_template_group",
               "title": "Basic Template Admin Catalog",
               "isPreset": true,
               "isVisible": true,
@@ -62,6 +62,19 @@
                     "info": "",
                     "icon": "sap-icon://activate",
                     "targetURL": "#AdminApp-display"
+                  }
+                },
+                {
+                  "id": "Products-manage",
+                  "title": "Products Management",
+                  "size": "1x1",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "chipId": "Products-manage",
+                    "title": "Products Management",
+                    "info": "",
+                    "icon": "sap-icon://activate",
+                    "targetURL": "#Products-manage"
                   }
                 }
 
@@ -111,6 +124,15 @@
               "url": "/basic_admin/webapp",
               "properties": { "icon": "sap-icon://document" },
               "navigationMode": "embedded"
+            },
+            "Products-manage": {
+              "title": "Products Management",
+              "description": "Products Management on basic template",
+              "additionalInformation": "SAPUI5.Component=ns.basicproducts",
+              "applicationType": "URL",
+              "url": "/basic_products/webapp",
+              "properties": { "icon": "sap-icon://document" },
+              "navigationMode": "embedded"
             }
           }
         }
@@ -130,6 +152,18 @@
                 "applicationType": "URL",
                 "additionalInformation": "SAPUI5.Component=ns.basicadmin",
                 "url": "/basic_admin/webapp"
+              }
+            },
+            "Products-manage": {
+              "semanticObject": "Products",
+              "action": "manage",
+              "signature": {
+                "parameters": {}
+              },
+              "resolutionResult": {
+                "applicationType": "URL",
+                "additionalInformation": "SAPUI5.Component=ns.basicproducts",
+                "url": "/basic_products/webapp"
               }
             }
           }
