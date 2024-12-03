@@ -16,6 +16,13 @@
 		}"
 		type="Active"
 		numberUnit="{testingModel>/currencyCode}"
+		intro="{
+			parts: [
+				{path: 'products>UnitsInStock'},
+				{path: 'products>Discontinued'}
+			],
+			formatter: '.formatIntro'
+		}"
 		press=".onItemSelected">
 	</ObjectListItem>
 </core:FragmentDefinition>
