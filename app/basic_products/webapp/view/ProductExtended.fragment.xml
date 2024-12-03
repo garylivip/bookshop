@@ -7,7 +7,7 @@
 		number="{
 			parts: [
 				{path: 'products>UnitPrice'},
-				{path: '/currencyCode'}
+				{path: 'testingModel>/currencyCode'}
 			],
 			type: 'sap.ui.model.type.Currency',
 			formatOptions : {
@@ -15,7 +15,7 @@
 			}
 		}"
 		type="Active"
-		numberUnit="{/currencyCode}"
+		numberUnit="{testingModel>/currencyCode}"
 		press=".onItemSelected">
 	</ObjectListItem>
 </core:FragmentDefinition>

@@ -115,47 +115,23 @@
             width="auto"
         >
             <List
-                id="list1"
+                id="ProductList"
                 headerText="{i18n>productListTitle}"
-                items="{products>/Products}"
+                items="{
+                    path: 'products>/Products',
+                    factory: '.productListFactory'
+			    }"
             >
-                <items>
-                    <ObjectListItem
-                        id="oli1"
-                        press=".onItemSelected"
-                        type="Active"
-                        title="{products>ProductName}"
-                        number="{
-						parts: [
-							{path: 'products>UnitPrice'},
-							{path: 'testingModel>/currencyCode'}
-						],
-						type: 'sap.ui.model.type.Currency',
-						formatOptions: { showMeasure: false }
-					}"
-                        numberUnit="{testingModel>/currencyCode}"
-                        numberState="{= ${products>UnitPrice} > ${testingModel>/priceThreshold} ? 'Error' : 'Success'}"
-                    >
-                        <attributes>
-                            <ObjectAttribute
-                                id="oa1"
-                                text="{products>QuantityPerUnit}"
-                            />
-                            <ObjectAttribute
-                                id="oa2"
-                                title="{i18n>stockValue}"
-                                text="{
-								parts: [
-									{path: 'products>UnitPrice'},
-									{path: 'products>UnitsInStock'},
-									{path: 'testingModel>/currencyCode'}
-								],
-								formatter: '.formatStockValue'
-							}"
-                            />
-                        </attributes>
-                    </ObjectListItem>
-                </items>
+                <dependents>
+                    <core:Fragment
+                        fragmentName="ns.basicproducts.view.ProductSimple"
+                        type="XML"
+                    />
+                    <core:Fragment
+                        fragmentName="ns.basicproducts.view.ProductExtended"
+                        type="XML"
+                    />
+                </dependents>
             </List>
         </Panel>
         <Panel
@@ -224,6 +200,5 @@
                 />
             </form:SimpleForm>
         </Panel>
-      
     </Page>
 </mvc:View>
