@@ -15,6 +15,8 @@ models.js under model can not be deleted => it serves for this.setModel(models.c
 从fiori launchpad 进入 app, 找不到 formater, 估计是fiori launchpad 的配置有些问题；
 自己写的formater 和  Property Formatting using data type 都有问题
 不止一处出现这个问题，暂时搁置，先做优先级高的练习
+=> 2024-12-4 问题已经解决。 Application Generator - basic template 生成 App.controller.js 里面的class 名字会写成第一个view的名字，例如ns.basicadmin.controller.Home, 或者 ns.basicadmin.controller.View1, 不确定是Application Generator的bug 还是 by design.
+只需要把class 名字改过来就没问题了。
 
 # 4. Aggregation Binding Using a Factory Function
 如果control 中间定义了 <dependents> sub_controls ，那么oContext 默认只会带过来 sub_controls 用到的字段；
@@ -31,3 +33,8 @@ models.js under model can not be deleted => it serves for this.setModel(models.c
 			return '';
 	  },
 
+# 5. controller id
+class name:  ns.basicadmin.controller.App , 
+File name:  App.controller.js, 
+View controllerName="ns.basicproducts.controller.App"
+这三个要保持一致。
